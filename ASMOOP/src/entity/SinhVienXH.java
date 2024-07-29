@@ -12,6 +12,15 @@ public class SinhVienXH extends SinhVien {
     public SinhVienXH() {
     }
 
+    public SinhVienXH(String maSSV, String tenSV, int tuoi, String queQuan, double toan, double van, double su, double dia, double GDCD) {
+        super(maSSV, tenSV, tuoi, queQuan);
+        this.toan = toan;
+        this.van = van;
+        this.su = su;
+        this.dia = dia;
+        this.GDCD = GDCD;
+    }
+
     @Override
     public double tinhDTB() {
         return (this.getToan() +
@@ -20,6 +29,21 @@ public class SinhVienXH extends SinhVien {
                 (this.getDia() * 2) +
                 (this.getGDCD() * 2)) / 8;
     }
+
+    @Override
+    public void DiemCong(double diemCongThem) {
+        double dtbMoi = this.tinhDTB() + diemCongThem;
+        if (dtbMoi > 10) {
+            dtbMoi = 10; // Đảm bảo ĐTB không vượt quá 10
+        }
+        double tiLe = dtbMoi / this.tinhDTB();
+        this.toan *= tiLe;
+        this.van *= tiLe;
+        this.su *= tiLe;
+        this.dia *= tiLe;
+        this.GDCD *= tiLe;
+    }
+
     public void setThongTinSinhVien(Scanner sc){
         super.setThongTinSinhVien(sc);
 

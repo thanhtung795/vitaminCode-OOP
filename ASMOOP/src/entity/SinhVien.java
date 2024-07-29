@@ -69,4 +69,5 @@ public abstract class SinhVien {
     }
 
     public abstract double tinhDTB();
+    public abstract void DiemCong(double diemCong);
 }

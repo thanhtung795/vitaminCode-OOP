@@ -23,6 +23,20 @@ public class SinhVienTN extends SinhVien {
                 this.getHoa() +
                 this.getSinh())/7;
     }
+@Override
+    public void DiemCong(double diemCongThem) {
+        double dtbMoi = this.tinhDTB() + diemCongThem;
+        if (dtbMoi > 10) {
+            dtbMoi = 10;
+        }
+        double tiLe = dtbMoi / this.tinhDTB();
+        this.toan *= tiLe;
+        this.van *= tiLe;
+        this.ly *= tiLe;
+        this.hoa *= tiLe;
+        this.sinh *= tiLe;
+    }
+
     public void setThongTinSinhVien(Scanner sc){
         super.setThongTinSinhVien(sc);
         System.out.print("Nhập điểm toán: ");
