@@ -10,7 +10,6 @@ public class SinhVienTN extends SinhVien {
     private double sinh;
 
 
-
     public SinhVienTN() {
     }
 
@@ -21,9 +20,10 @@ public class SinhVienTN extends SinhVien {
                 this.getVan() +
                 (this.getLy() * 2) +
                 this.getHoa() +
-                this.getSinh())/7;
+                this.getSinh()) / 7;
     }
-@Override
+
+    @Override
     public void DiemCong(double diemCongThem) {
         double dtbMoi = this.tinhDTB() + diemCongThem;
         if (dtbMoi > 10) {
@@ -37,7 +37,7 @@ public class SinhVienTN extends SinhVien {
         this.sinh *= tiLe;
     }
 
-    public void setThongTinSinhVien(Scanner sc){
+    public void setThongTinSinhVien(Scanner sc) {
         super.setThongTinSinhVien(sc);
         System.out.print("Nhập điểm toán: ");
         this.setToan(sc.nextDouble());
@@ -51,6 +51,7 @@ public class SinhVienTN extends SinhVien {
         this.setSinh(sc.nextDouble());
         sc.nextLine();
     }
+
     @Override
     public String getThongTinSinhVien() {
         return "Sinh viên tự nhiên, " + super.getThongTinSinhVien() + String.format(", ĐTB: %.2f",

@@ -23,11 +23,7 @@ public class SinhVienXH extends SinhVien {
 
     @Override
     public double tinhDTB() {
-        return (this.getToan() +
-                this.getVan() +
-                (this.getSu() * 2) +
-                (this.getDia() * 2) +
-                (this.getGDCD() * 2)) / 8;
+        return (this.getToan() + this.getVan() + (this.getSu() * 2) + (this.getDia() * 2) + (this.getGDCD() * 2)) / 8;
     }
 
     @Override
@@ -44,7 +40,7 @@ public class SinhVienXH extends SinhVien {
         this.GDCD *= tiLe;
     }
 
-    public void setThongTinSinhVien(Scanner sc){
+    public void setThongTinSinhVien(Scanner sc) {
         super.setThongTinSinhVien(sc);
 
         System.out.print("Nhập điểm toán: ");
@@ -59,11 +55,12 @@ public class SinhVienXH extends SinhVien {
         this.setGDCD(sc.nextDouble());
         sc.nextLine();
     }
+
     @Override
     public String getThongTinSinhVien() {
-        return "Sinh viên xã hội, " + super.getThongTinSinhVien() + String.format(", ĐTB: %.2f",
-                this.tinhDTB());
+        return "Sinh viên xã hội, " + super.getThongTinSinhVien() + String.format(", ĐTB: %.2f", this.tinhDTB());
     }
+
     public SinhVienXH(String maSSV, String tenSV, int tuoi, String queQuan, double toan, double van, double su, double dia) {
         super(maSSV, tenSV, tuoi, queQuan);
         this.toan = toan;

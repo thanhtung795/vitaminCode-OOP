@@ -9,12 +9,11 @@ public abstract class SinhVien {
     private String queQuan;
 
 
-
-
     public SinhVien() {
 
     }
-    public SinhVien(String maSSV,String tenSV, int tuoi, String queQuan) {
+
+    public SinhVien(String maSSV, String tenSV, int tuoi, String queQuan) {
         this.maSSV = maSSV;
         this.tenSV = tenSV;
         this.tuoi = tuoi;
@@ -52,7 +51,8 @@ public abstract class SinhVien {
     public void setQueQuan(String queQuan) {
         this.queQuan = queQuan;
     }
-    public void setThongTinSinhVien(Scanner sc){
+
+    public void setThongTinSinhVien(Scanner sc) {
         System.out.print("Nhập mã số sinh viên: ");
         this.setMaSSV(sc.nextLine());
         System.out.print("Nhâp tên sinh viên: ");
@@ -63,11 +63,13 @@ public abstract class SinhVien {
         System.out.print("Nhập quê quán: ");
         this.setQueQuan(sc.nextLine());
     }
+
     public String getThongTinSinhVien() {
         return String.format("Mã SV: %s, Tên: %s, Tuổi: %d, Quê quán: %s",
                 this.getMaSSV(), this.getTenSV(), this.getTuoi(), this.getQueQuan());
     }
 
     public abstract double tinhDTB();
+
     public abstract void DiemCong(double diemCong);
 }
