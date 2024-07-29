@@ -25,19 +25,15 @@ public class Menu {
     void dataTest() {
         // add sinh viên tự nhiên
         sinhVienList.add(new SinhVienTN("SV01", "Võ Thanh Tùng", 28, "HCM", 9, 9, 9, 9, 9));
-        sinhVienList.add(new SinhVienXH("SV10", "Hoàng Văn E", 25, "NT", 4, 1, 2, 3));
-        sinhVienList.add(new SinhVienTN("SV02", "Phạm Huy Hoàng", 20, "HCM", 6, 6, 7, 5, 8));
-        sinhVienList.add(new SinhVienTN("SV03", "Nguyễn Trà My", 20, "HCM", 6, 7, 8, 7, 6));
-        sinhVienList.add(new SinhVienXH("SV07", "Trần Thị B", 22, "ĐN", 6.5, 7, 8, 7.5));
+        sinhVienList.add(new SinhVienXH("SV10", "Khứa kìa kìa", 25, "NT", 4, 1, 2, 3));
+        sinhVienList.add(new SinhVienTN("SV02", "Khứa đó đó", 20, "HCM", 6, 6, 7, 5, 8));
+        sinhVienList.add(new SinhVienTN("SV03", "Khứa kìa trời", 20, "HCM", 6, 7, 8, 7, 6));
+        sinhVienList.add(new SinhVienXH("SV07", "Biết khứa nào đâu", 22, "ĐN", 6.5, 7, 8, 7.5));
         sinhVienList.add(new SinhVienTN("SV04", "Khứa nào ai biết", 20, "HCM", 4, 4, 3, 4, 3));
-        sinhVienList.add(new SinhVienXH("SV06", "Lê Văn A", 21, "HN", 7, 8, 7.5, 8));
-        sinhVienList.add(new SinhVienXH("SV09", "Phạm Thị D", 24, "CT", 2, 4, 4, 2));
-        sinhVienList.add(new SinhVienXH("SV08", "Nguyễn Văn C", 23, "SG", 8, 7.5, 7, 8));
+        sinhVienList.add(new SinhVienXH("SV06", "Là khúa nào", 21, "HN", 7, 8, 7.5, 8));
+        sinhVienList.add(new SinhVienXH("SV09", "Khứa  này này", 24, "CT", 2, 4, 4, 2));
+        sinhVienList.add(new SinhVienXH("SV08", "Khứa bửa hỗm", 23, "SG", 8, 7.5, 7, 8));
         sinhVienList.add(new SinhVienTN("SV05", "Khứa nào đó", 20, "HCM", 2, 1, 3, 2, 3));
-
-        // add sinh viên xã hội
-
-
     }
 
     public void showMenu() {
@@ -107,7 +103,7 @@ public class Menu {
                     break;
                 case 2:
                     System.out.println("|===========================================================================================|");
-                    System.out.println("|========Thông tin sinh viên=======|");
+                    System.out.println("|=====================================Thông tin sinh viên===================================|");
                     xuatThongTinSinhVien(sinhVienList);
                     System.out.println("|===========================================================================================|");
                     break;
@@ -179,7 +175,7 @@ public class Menu {
         sinhVienListNhoHon5 = new ArrayList<>();
         for (SinhVien sv : sinhVienList) {
             if (sv.tinhDTB() < 5) {
-                SinhVien svMoi;
+                SinhVien svMoi = null;
                 if (sv instanceof SinhVienTN) {
                     svMoi = new SinhVienTN(
                             sv.getMaSSV(),
@@ -204,8 +200,6 @@ public class Menu {
                             ((SinhVienXH) sv).getDia(),
                             ((SinhVienXH) sv).getGDCD()
                     );
-                } else {
-                    continue;
                 }
                 svMoi.DiemCong(1);
                 sinhVienListNhoHon5.add(svMoi);
